@@ -16,6 +16,11 @@ export default defineConfig({
     server: { entry: "server" },
     // The portfolio is identical for every visitor, so render it to static HTML at build time.
     pages: [{ path: "/" }],
-    prerender: { enabled: true, autoStaticPathsDiscovery: false },
+    prerender: {
+      enabled: true,
+      crawlLinks: false,
+      autoStaticPathsDiscovery: false,
+      filter: ({ path }: { path: string }) => path === "/",
+    },
   },
 });
