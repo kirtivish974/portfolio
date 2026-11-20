@@ -12,7 +12,7 @@ export function Skills() {
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-2">
           {skills.map((g, i) => (
-            <div key={g.group} className="bg-background p-8 sm:p-10">
+            <div key={g.group} className="bg-card p-8 sm:p-10">
               <div className="flex items-baseline gap-4">
                 <span className="font-mono text-sm text-highlight">0{i + 1}</span>
                 <h3 className="font-display text-3xl font-bold">{g.group}</h3>

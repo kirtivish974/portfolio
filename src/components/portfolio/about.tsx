@@ -27,7 +27,7 @@ export function About() {
 
         <dl className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-3">
           {profile.stats.map((s) => (
-            <div key={s.label} className="bg-background p-8">
+            <div key={s.label} className="bg-card p-8">
               <dt className="sr-only">{s.label}</dt>
               <dd className="font-display text-5xl font-extrabold text-highlight sm:text-6xl">{s.value}</dd>
               <dd className="mt-3 text-muted-foreground">{s.label}</dd>
