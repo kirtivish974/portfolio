@@ -1,5 +1,6 @@
 import resume from "@/assets/Kirti_Vishwakarma_GenAI_Resume.pdf.asset.json";
 import { PopLink } from "./pop-link";
+import { ThemeToggle } from "./theme-toggle";
 
 const links = [
   { href: "#about", label: "About" },
@@ -28,6 +29,7 @@ export function SiteNav() {
             </li>
           ))}
         </ul>
+        <ThemeToggle />
         <PopLink href={resume.url} download variant="accent" size="sm" className="shrink-0 border-accent shadow-none hover:shadow-none">
           Resume ↓
         </PopLink>
