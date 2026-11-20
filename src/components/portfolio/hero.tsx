@@ -63,7 +63,7 @@ export function Hero() {
 
         <div className="mt-12 grid gap-10 border-t-2 border-foreground pt-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
           <p className="font-display text-3xl font-bold leading-[1.05] sm:text-4xl md:text-5xl">
-            <span className="rounded-lg bg-accent px-2">AI Engineer</span> &amp;{" "}
+            <span className="rounded-lg bg-accent px-2 text-accent-foreground">AI Engineer</span> &amp;{" "}
             <span className="text-primary">Generative&nbsp;AI</span> Engineer in the making.
           </p>
           <div className="flex flex-col justify-between gap-6">

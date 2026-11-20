@@ -49,71 +49,84 @@
   --color-ink: var(--ink);
   --color-paper: var(--paper);
   --color-highlight: var(--highlight);
-  --color-blue: var(--blue);
-  --color-neon-purple: var(--neon-purple);
+  --color-blue: var(--royal-blue);
+  --color-teal: var(--deep-teal);
 }
 
 :root {
   --radius: 1rem;
 
-  /* raw palette */
-  --paper: oklch(0.965 0.018 85);
-  --ink: oklch(0.17 0.012 60);
-  --blue: oklch(0.55 0.23 255);
-  --neon-purple: oklch(0.76 0.25 305);
-  --vermilion: var(--blue);
-  --lime: var(--neon-purple);
+  /*
+   * 60-30-10 Design System Palette:
+   * 60% Background: Pure Alabaster (#F8FAFC) & Crisp White (#FFFFFF)
+   * 30% Primary Text / Structure: Deep Slate (#0F172A) & Muted Gray (#64748B)
+   * 10% Accent: Electric Royal Blue (#2563EB) & Deep Teal (#0D9488)
+   */
+  --alabaster: #F8FAFC;
+  --white: #FFFFFF;
+  --slate-900: #0F172A;
+  --slate-500: #64748B;
+  --royal-blue: #2563EB;
+  --deep-teal: #0D9488;
 
-  /* light (paper) semantic tokens */
-  --background: var(--paper);
-  --foreground: var(--ink);
-  --card: oklch(0.99 0.008 85);
-  --card-foreground: var(--ink);
-  --popover: oklch(0.99 0.008 85);
-  --popover-foreground: var(--ink);
-  --primary: var(--blue);
-  --primary-foreground: oklch(0.99 0.008 85);
-  --secondary: oklch(0.92 0.025 85);
-  --secondary-foreground: var(--ink);
-  --muted: oklch(0.92 0.025 85);
-  --muted-foreground: oklch(0.42 0.02 60);
-  --accent: var(--neon-purple);
-  --accent-foreground: var(--ink);
-  --highlight: var(--blue);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.17 0.012 60 / 14%);
-  --input: oklch(0.17 0.012 60 / 18%);
-  --ring: var(--blue);
+  /* Aliases */
+  --paper: var(--alabaster);
+  --ink: var(--slate-900);
+  --blue: var(--royal-blue);
+  --neon-purple: var(--deep-teal);
+  --vermilion: var(--royal-blue);
+  --lime: var(--deep-teal);
+
+  /* Light (Alabaster) semantic tokens */
+  --background: var(--alabaster);
+  --foreground: var(--slate-900);
+  --card: var(--white);
+  --card-foreground: var(--slate-900);
+  --popover: var(--white);
+  --popover-foreground: var(--slate-900);
+  --primary: var(--royal-blue);
+  --primary-foreground: var(--white);
+  --secondary: #F1F5F9;
+  --secondary-foreground: var(--slate-900);
+  --muted: #F1F5F9;
+  --muted-foreground: var(--slate-500);
+  --accent: var(--deep-teal);
+  --accent-foreground: var(--white);
+  --highlight: var(--royal-blue);
+  --destructive: #EF4444;
+  --destructive-foreground: var(--white);
+  --border: rgba(15, 23, 42, 0.12);
+  --input: rgba(15, 23, 42, 0.16);
+  --ring: var(--royal-blue);
 
   --shadow-pop: 6px 6px 0 0 var(--foreground);
   --shadow-pop-sm: 3px 3px 0 0 var(--foreground);
 }
 
-/* Dark section palette — apply to any section */
+/* Dark section palette — Deep Slate (#0F172A) */
 .theme-ink {
-  --background: var(--ink);
-  --foreground: var(--paper);
-  --card: oklch(0.22 0.012 60);
-  --card-foreground: var(--paper);
-  --secondary: oklch(0.26 0.012 60);
-  --secondary-foreground: var(--paper);
-  --muted: oklch(0.26 0.012 60);
-  --muted-foreground: oklch(0.75 0.02 80);
-  --highlight: var(--neon-purple);
-  --border: oklch(0.965 0.018 85 / 14%);
-  --input: oklch(0.965 0.018 85 / 18%);
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+  --card: #1E293B;
+  --card-foreground: #F8FAFC;
+  --secondary: #1E293B;
+  --secondary-foreground: #F8FAFC;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --highlight: #38BDF8;
+  --border: rgba(248, 250, 252, 0.12);
+  --input: rgba(248, 250, 252, 0.16);
   background-color: var(--background);
   color: var(--foreground);
 }
 
-/* Blue flare section palette */
+/* Accent flare section palette — Electric Royal Blue (#2563EB) */
 .theme-flare {
-  --background: var(--blue);
-  --foreground: var(--paper);
-  --muted-foreground: oklch(0.88 0.04 255);
-  --highlight: var(--neon-purple);
-  --border: oklch(0.965 0.018 85 / 25%);
+  --background: var(--royal-blue);
+  --foreground: var(--white);
+  --muted-foreground: #DBEAFE;
+  --highlight: #2DD4BF;
+  --border: rgba(255, 255, 255, 0.25);
   background-color: var(--background);
   color: var(--foreground);
 }
@@ -133,8 +146,8 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: var(--neon-purple);
-    color: var(--ink);
+    background: var(--royal-blue);
+    color: var(--white);
   }
 }
 
