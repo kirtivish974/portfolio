@@ -49,89 +49,116 @@
   --color-ink: var(--ink);
   --color-paper: var(--paper);
   --color-highlight: var(--highlight);
-  --color-amber: var(--amber-gold);
-  --color-mint: var(--mint);
-  --color-violet: var(--soft-violet);
+
+  /* Brand Colors from Tailwind spec */
+  --color-brand-bg: var(--bg-primary);
+  --color-brand-surface: var(--bg-secondary);
+  --color-brand-elevated: var(--bg-elevated);
+  --color-brand-text: var(--text-primary);
+  --color-brand-muted: var(--text-secondary);
+  --color-brand-accent: var(--accent-primary);
+  --color-brand-accent-hover: var(--accent-hover);
+  --color-brand-badge: var(--accent-subtle);
+  --color-brand-border: var(--border-subtle);
 }
 
 :root {
   --radius: 1rem;
 
   /*
-   * 60-30-10 Design System Palette (Obsidian Dark Theme):
-   * 60% Background: Rich Obsidian (#121212 — softer on the eyes than pure #000000)
-   * 30% Surface / Cards: Elevated Charcoal (#1E1E22) with Off-White text (#F3F4F6) & Muted Gray (#9CA3AF)
-   * 10% Accent: Amber Gold (#F59E0B), Mint (#10B981), Soft Violet (#8B5CF6)
+   * User Specified Design System Palette:
+   * Backgrounds:
+   *   --bg-primary: #F8FAFC (Cool Alabaster - Main canvas)
+   *   --bg-secondary: #F1F5F9 (Frost Gray - Cards & code blocks)
+   *   --bg-elevated: #FFFFFF (Pure White - Modals & hover states)
+   * Typography:
+   *   --text-primary: #0B1120 (Deep Midnight - Headings & body)
+   *   --text-secondary: #475569 (Steel Slate - Subtitles & metadata)
+   *   --text-inverse: #FFFFFF (White - Text on accent buttons)
+   * Accents & Borders:
+   *   --accent-primary: #1D4ED8 (Sapphire Indigo - CTAs & links)
+   *   --accent-hover: #1E40AF (Deep Royal - Button hover state)
+   *   --accent-subtle: #DBEAFE (Soft Blue - Tech stack badges)
+   *   --border-subtle: #CBD5E1 (Cool Gray - Card & table borders)
    */
-  --obsidian: #121212;
-  --charcoal: #1E1E22;
-  --charcoal-light: #26262B;
-  --off-white: #F3F4F6;
-  --muted-gray: #9CA3AF;
-  --amber-gold: #F59E0B;
-  --mint: #10B981;
-  --soft-violet: #8B5CF6;
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #F1F5F9;
+  --bg-elevated: #FFFFFF;
+
+  --text-primary: #0B1120;
+  --text-secondary: #475569;
+  --text-inverse: #FFFFFF;
+
+  --accent-primary: #1D4ED8;
+  --accent-hover: #1E40AF;
+  --accent-subtle: #DBEAFE;
+  --border-subtle: #CBD5E1;
 
   /* Compatibility aliases */
-  --paper: var(--obsidian);
-  --ink: var(--off-white);
-  --royal-blue: var(--amber-gold);
-  --deep-teal: var(--mint);
-  --blue: var(--amber-gold);
-  --neon-purple: var(--mint);
-  --vermilion: var(--amber-gold);
-  --lime: var(--mint);
+  --paper: var(--bg-primary);
+  --ink: var(--text-primary);
+  --royal-blue: var(--accent-primary);
+  --deep-teal: var(--accent-primary);
+  --blue: var(--accent-primary);
+  --neon-purple: var(--accent-subtle);
+  --vermilion: var(--accent-primary);
+  --lime: var(--accent-subtle);
+  --amber-gold: var(--accent-primary);
+  --mint: var(--accent-subtle);
+  --soft-violet: var(--accent-primary);
 
-  /* Semantic tokens */
-  --background: var(--obsidian);
-  --foreground: var(--off-white);
-  --card: var(--charcoal);
-  --card-foreground: var(--off-white);
-  --popover: var(--charcoal);
-  --popover-foreground: var(--off-white);
-  --primary: var(--amber-gold);
-  --primary-foreground: #121212;
-  --secondary: var(--charcoal-light);
-  --secondary-foreground: var(--off-white);
-  --muted: var(--charcoal);
-  --muted-foreground: var(--muted-gray);
-  --accent: var(--mint);
-  --accent-foreground: #121212;
-  --highlight: var(--amber-gold);
+  /* Light Canvas Semantic Tokens */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+  --card: var(--bg-elevated);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-primary);
+  --primary-foreground: var(--text-inverse);
+  --secondary: var(--bg-secondary);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-secondary);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--accent-subtle);
+  --accent-foreground: var(--accent-primary);
+  --highlight: var(--accent-primary);
   --destructive: #EF4444;
-  --destructive-foreground: var(--off-white);
-  --border: rgba(243, 244, 246, 0.16);
-  --input: rgba(243, 244, 246, 0.2);
-  --ring: var(--amber-gold);
+  --destructive-foreground: var(--text-inverse);
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--accent-primary);
 
-  --shadow-pop: 5px 5px 0 0 #000000;
-  --shadow-pop-sm: 3px 3px 0 0 #000000;
+  --shadow-pop: 5px 5px 0 0 var(--text-primary);
+  --shadow-pop-sm: 3px 3px 0 0 var(--text-primary);
 }
 
-/* Dark section palette — Deep Obsidian & Charcoal */
+/* Dark section palette — Deep Midnight (#0B1120) */
 .theme-ink {
-  --background: #161619;
-  --foreground: #F3F4F6;
-  --card: #1E1E22;
-  --card-foreground: #F3F4F6;
-  --secondary: #26262B;
-  --secondary-foreground: #F3F4F6;
-  --muted: #1E1E22;
-  --muted-foreground: #9CA3AF;
-  --highlight: var(--amber-gold);
-  --border: rgba(243, 244, 246, 0.14);
-  --input: rgba(243, 244, 246, 0.18);
+  --background: var(--text-primary);
+  --foreground: var(--bg-primary);
+  --card: #151D30;
+  --card-foreground: var(--bg-primary);
+  --secondary: #1E293B;
+  --secondary-foreground: var(--bg-primary);
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: var(--accent-primary);
+  --accent-foreground: var(--text-inverse);
+  --highlight: #60A5FA;
+  --border: rgba(248, 250, 252, 0.12);
+  --input: rgba(248, 250, 252, 0.16);
   background-color: var(--background);
   color: var(--foreground);
 }
 
-/* Accent flare section palette */
+/* Accent flare section palette — Sapphire Indigo (#1D4ED8) */
 .theme-flare {
-  --background: #18181C;
-  --foreground: #F3F4F6;
-  --muted-foreground: #9CA3AF;
-  --highlight: var(--amber-gold);
-  --border: rgba(243, 244, 246, 0.18);
+  --background: var(--accent-primary);
+  --foreground: var(--text-inverse);
+  --muted-foreground: var(--accent-subtle);
+  --highlight: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.25);
   background-color: var(--background);
   color: var(--foreground);
 }
@@ -151,8 +178,8 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: var(--amber-gold);
-    color: #121212;
+    background: var(--accent-primary);
+    color: var(--text-inverse);
   }
 }
 

@@ -9,7 +9,7 @@ export const popLinkVariants = cva(
     variants: {
       variant: {
         solid: "bg-foreground text-background shadow-pop-sm hover:shadow-pop",
-        primary: "bg-primary text-primary-foreground shadow-pop-sm hover:shadow-pop",
+        primary: "bg-primary text-primary-foreground shadow-pop-sm hover:shadow-pop hover:bg-[var(--accent-hover)]",
         accent: "bg-accent text-accent-foreground shadow-pop-sm hover:shadow-pop",
         outline: "bg-transparent text-foreground hover:bg-foreground hover:text-background",
       },
