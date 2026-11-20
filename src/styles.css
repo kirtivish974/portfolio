@@ -49,6 +49,8 @@
   --color-ink: var(--ink);
   --color-paper: var(--paper);
   --color-highlight: var(--highlight);
+  --color-blue: var(--blue);
+  --color-neon-purple: var(--neon-purple);
 }
 
 :root {
@@ -57,8 +59,10 @@
   /* raw palette */
   --paper: oklch(0.965 0.018 85);
   --ink: oklch(0.17 0.012 60);
-  --vermilion: oklch(0.64 0.215 35);
-  --lime: oklch(0.91 0.2 122);
+  --blue: oklch(0.55 0.23 255);
+  --neon-purple: oklch(0.76 0.25 305);
+  --vermilion: var(--blue);
+  --lime: var(--neon-purple);
 
   /* light (paper) semantic tokens */
   --background: var(--paper);
@@ -67,20 +71,20 @@
   --card-foreground: var(--ink);
   --popover: oklch(0.99 0.008 85);
   --popover-foreground: var(--ink);
-  --primary: var(--vermilion);
+  --primary: var(--blue);
   --primary-foreground: oklch(0.99 0.008 85);
   --secondary: oklch(0.92 0.025 85);
   --secondary-foreground: var(--ink);
   --muted: oklch(0.92 0.025 85);
   --muted-foreground: oklch(0.42 0.02 60);
-  --accent: var(--lime);
+  --accent: var(--neon-purple);
   --accent-foreground: var(--ink);
-  --highlight: var(--vermilion);
+  --highlight: var(--blue);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.17 0.012 60 / 14%);
   --input: oklch(0.17 0.012 60 / 18%);
-  --ring: var(--vermilion);
+  --ring: var(--blue);
 
   --shadow-pop: 6px 6px 0 0 var(--foreground);
   --shadow-pop-sm: 3px 3px 0 0 var(--foreground);
@@ -96,20 +100,20 @@
   --secondary-foreground: var(--paper);
   --muted: oklch(0.26 0.012 60);
   --muted-foreground: oklch(0.75 0.02 80);
-  --highlight: var(--lime);
+  --highlight: var(--neon-purple);
   --border: oklch(0.965 0.018 85 / 14%);
   --input: oklch(0.965 0.018 85 / 18%);
   background-color: var(--background);
   color: var(--foreground);
 }
 
-/* Vermilion section palette */
+/* Blue flare section palette */
 .theme-flare {
-  --background: var(--vermilion);
-  --foreground: var(--ink);
-  --muted-foreground: oklch(0.25 0.03 40);
-  --highlight: var(--paper);
-  --border: oklch(0.17 0.012 60 / 25%);
+  --background: var(--blue);
+  --foreground: var(--paper);
+  --muted-foreground: oklch(0.88 0.04 255);
+  --highlight: var(--neon-purple);
+  --border: oklch(0.965 0.018 85 / 25%);
   background-color: var(--background);
   color: var(--foreground);
 }
@@ -129,9 +133,23 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: var(--lime);
+    background: var(--neon-purple);
     color: var(--ink);
   }
+}
+
+/* Remove mark of Edit with Lovable */
+#lovable-badge,
+#lovable-badge-cta,
+#lovable-badge-text,
+#lovable-badge-divider,
+#lovable-badge-close,
+[id^="lovable-badge"],
+[class*="lovable-badge"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 @utility font-display {
